@@ -28,6 +28,7 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"],
+      imgSrc: ["'self'", 'data:', 'https://arcadedirect.co.uk', 'https://i5.walmartimages.com', 'https://cdn.mos.cms.futurecdn.net'],
     },
   }),
 );
