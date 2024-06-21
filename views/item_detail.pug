@@ -1,0 +1,20 @@
+extends layout 
+block content 
+    h1= title 
+
+    p #[strong Name: ] #{item.name}
+    if item.image_url.length
+        p
+            img(src=item.image_url, alt=item.name, height="350")
+    else    
+        p
+    p #[strong Category: ]
+        a(href=item.category.url) #{item.category.name}
+    p #[strong Description: ] #{item.description}
+    p #[strong Price: ] #{item.price}
+    p #[strong Stock: ] #{item.stock}
+
+    p
+    a(href=item.url+'/delete') Delete Item
+    p
+    a(href=item.url+'/update') Update Item

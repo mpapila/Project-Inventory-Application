@@ -1,0 +1,17 @@
+extends layout 
+block content 
+    h1= title
+    if item_list.length 
+        ul 
+            each item in item_list      
+                li 
+                    a(href=item.url) #{item.name + ' '}
+                    | (#{item.category.name})
+                    if item.image_url.length
+                        p
+                            img(src=item.image_url, alt=item.name, height="250")
+                    else 
+                        p 
+
+    else 
+        p There are no items.

@@ -1,0 +1,16 @@
+extends layout 
+block content 
+    h1=title
+
+    if item_list.length
+        ul 
+            each item in item_list
+                li 
+                    a(href=item.url) #{item.name + ' '}
+    else 
+        p This category has no item.
+    
+    p
+    a(href=categories.url+'/delete') Delete Category
+    p
+    a(href=categories.url+'/update') Update Category
